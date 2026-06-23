@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rozkwit Mamy | Kobieca energia w wielodzietnym domu</title>
+
+  <meta name="description" content="Kursy i narzędzia dla mam wielodzietnych, które chcą odzyskać energię, kobiecość, lekkość i spokój w domu pełnym dzieci, hałasu i codziennych obowiązków.">
+  <meta name="keywords" content="mama wielodzietna, kurs dla mam, kobieca energia, rozkwit mamy, wielodzietna rodzina, macierzyństwo, przeciążenie mamy, lekkość kobiecości">
+
+  <style>
+    :root {
+      --bg: #fff8f3;
+      --bg-soft: #f8ebe5;
+      --cream: #fffdf9;
+      --rose: #c9878b;
+      --rose-dark: #8f4d55;
+      --plum: #5b3549;
+      --gold: #c79b61;
+      --text: #3d2c32;
+      --muted: #7b6670;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(91, 53, 73, 0.13);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 248, 243, 0.92);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(199, 155, 97, 0.18);
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: bold;
+      color: var(--plum);
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--rose-dark);
+    }
+
+    .hero {
+      min-height: 88vh;
+      padding: 80px 7% 70px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(199, 155, 97, 0.18), transparent 34%),
+        radial-gradient(circle at 15% 80%, rgba(201, 135, 139, 0.20), transparent 32%),
+        var(--bg);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(201, 135, 139, 0.16);
+      color: var(--rose-dark);
+      font-family: Arial, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      line-height: 1.05;
+      color: var(--plum);
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 690px;
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .hero strong {
+      color: var(--rose-dark);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 26px;
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      transition: 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--plum);
+      color: var(--white);
+      box-shadow: 0 12px 24px rgba(91, 53, 73, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--rose-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--plum);
+      border: 1px solid rgba(91, 53, 73, 0.16);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--rose);
+      color: var(--rose-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(199, 155, 97, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(201, 135, 139, 0.16);
+      top: -70px;
+      right: -60px;
+    }
+
+    .hero-card h2 {
+      position: relative;
+      color: var(--plum);
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-card p {
+      position: relative;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    .mini-list {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.98rem;
+    }
+
+    .mini-item {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(248, 235, 229, 0.75);
+      color: var(--text);
+    }
+
+    section {
+      padding: 82px 7%;
+    }
+
+    .section-title {
+      max-width: 850px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      color: var(--plum);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 1.13rem;
+    }
+
+    .problem {
+      background: var(--cream);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(91, 53, 73, 0.08);
+      border: 1px solid rgba(199, 155, 97, 0.13);
+    }
+
+    .card .number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(201, 135, 139, 0.18);
+      color: var(--rose-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: var(--plum);
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .quote-section {
+      background: var(--bg-soft);
+      text-align: center;
+    }
+
+    .quote {
+      max-width: 920px;
+      margin: 0 auto;
+      font-size: clamp(1.8rem, 4vw, 3.3rem);
+      line-height: 1.22;
+      color: var(--plum);
+    }
+
+    .quote span {
+      color: var(--rose-dark);
+    }
+
+    .method {
+      background: var(--bg);
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .method-box {
+      background: var(--plum);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .method-box h2 {
+      font-size: 2.5rem;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .method-box p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.1rem;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 22px 24px;
+      border-left: 6px solid var(--gold);
+      box-shadow: 0 10px 24px rgba(91, 53, 73, 0.07);
+    }
+
+    .step h3 {
+      color: var(--plum);
+      margin-bottom: 5px;
+      font-size: 1.28rem;
+    }
+
+    .step p {
+      color: var(--muted);
+    }
+
+    .freebie {
+      background:
+        linear-gradient(135deg, rgba(91, 53, 73, 0.95), rgba(143, 77, 85, 0.94)),
+        var(--plum);
+      color: var(--white);
+    }
+
+    .freebie-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .freebie h2 {
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+
+    .freebie p {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1.15rem;
+      margin-bottom: 24px;
+    }
+
+    .form-box {
+      background: var(--white);
+      border-radius: 26px;
+      padding: 30px;
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    .form-box h3 {
+      color: var(--plum);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .form-box p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(91, 53, 73, 0.18);
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+    }
+
+    input:focus {
+      outline: 2px solid rgba(201, 135, 139, 0.45);
+      border-color: var(--rose);
+    }
+
+    .form-note {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .course {
+      background: var(--cream);
+    }
+
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .module {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 26px;
+      border: 1px solid rgba(199, 155, 97, 0.14);
+      box-shadow: 0 10px 28px rgba(91, 53, 73, 0.07);
+    }
+
+    .module h3 {
+      color: var(--plum);
+      font-size: 1.28rem;
+      margin-bottom: 8px;
+    }
+
+    .module p {
+      color: var(--muted);
+    }
+
+    .about {
+      background: var(--bg);
+    }
+
+    .about-box {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 42px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(199, 155, 97, 0.13);
+    }
+
+    .about-box h2 {
+      color: var(--plum);
+      font-size: 2.6rem;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: var(--bg-soft);
+    }
+
+    .final-cta h2 {
+      max-width: 840px;
+      margin: 0 auto 20px;
+      color: var(--plum);
+      font-size: clamp(2.2rem, 4vw, 3.7rem);
+      line-height: 1.12;
+    }
+
+    .final-cta p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    footer {
+      padding: 34px 7%;
+      background: var(--plum);
+      color: rgba(255, 255, 255, 0.78);
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .method-grid,
+      .freebie-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .modules {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .top-bar {
+        padding: 16px 5%;
+      }
+
+      .hero,
+      section {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .hero-card,
+      .method-box,
+      .about-box {
+        padding: 26px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Pasek górny strony -->
+  <header class="top-bar">
+    <a href="#" class="logo">Rozkwit <span>Mamy</span></a>
+
+    <nav class="nav">
+      <a href="#problem">Dla kogo</a>
+      <a href="#metoda">Metoda</a>
+      <a href="#mapa">Mapa energii</a>
+      <a href="#kurs">Kurs</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- Sekcja główna -->
+  <main class="hero">
+    <div>
+      <div class="eyebrow">Dla mam wielodzietnych</div>
+
+      <h1>Rozkwitnij, nawet jeśli cały dzień ktoś woła „mamo”.</h1>
+
+      <p>
+        Kursy i narzędzia dla mam, które kochają swoje dzieci, ale czują,
+        że codzienność zaczęła wysysać z nich <strong>energię, kobiecość,
+        lekkość i własne życie</strong>.
+      </p>
+
+      <div class="buttons">
+        <a href="#mapa" class="btn btn-primary">Sprawdź, gdzie tracisz energię</a>
+        <a href="#kurs" class="btn btn-secondary">Zobacz, co powstaje</a>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h2>Nie musisz być bardziej idealna.</h2>
+      <p>
+        Być może nie potrzebujesz kolejnej listy zadań. Być może potrzebujesz
+        zobaczyć, gdzie wycieka Twoja energia — i zacząć wracać do siebie
+        małymi, realnymi krokami.
+      </p>
+
+      <div class="mini-list">
+        <div class="mini-item">✦ mniej poczucia winy</div>
+        <div class="mini-item">✦ więcej oddechu i granic</div>
+        <div class="mini-item">✦ ciało mamy, nie tylko ciało do obsługi domu</div>
+        <div class="mini-item">✦ kobiecość, lekkość i sprawczość w praktyce</div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Problem -->
+  <section class="problem" id="problem">
+    <div class="section-title">
+      <h2>To nie jest kurs o tym, jak mieć idealnie grzeczne dzieci.</h2>
+      <p>
+        To jest droga dla mamy, która chce odzyskać siebie w domu pełnym potrzeb,
+        hałasu, emocji, bałaganu i ciągłego „mamo”.
+      </p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="number">1</div>
+        <h3>Gdy wszystko jest na Tobie</h3>
+        <p>
+          Ktoś chce jeść, ktoś płacze, ktoś się kłóci, ktoś czegoś szuka.
+          A Ty jesteś centrum dowodzenia, które nie ma kiedy się naładować.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="number">2</div>
+        <h3>Gdy znikasz jako kobieta</h3>
+        <p>
+          Nie chodzi tylko o zmęczenie. Chodzi o utraconą lekkość, ciało,
+          piękno, pragnienia, ciszę, własne myśli i własny rytm.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="number">3</div>
+        <h3>Gdy próbujesz ogarnąć więcej</h3>
+        <p>
+          A może nie trzeba więcej cisnąć. Może trzeba uprościć system,
+          odbudować energię i postawić granice, które chronią Twoje życie.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Cytat -->
+  <section class="quote-section">
+    <div class="quote">
+      Nie uczę kobiet, jak być jeszcze bardziej wydajnymi mamami.
+      Uczę je, jak <span>wracać do siebie</span>.
+    </div>
+  </section>
+
+  <!-- Metoda -->
+  <section class="method" id="metoda">
+    <div class="method-grid">
+      <div class="method-box">
+        <h2>Metoda Rozkwitu Mamy</h2>
+        <p>
+          To prosty proces dla kobiety, która nie ma idealnych warunków,
+          ale chce odzyskać energię, granice, kobiecość i sprawczość
+          w realnym, wielodzietnym domu.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <h3>1. Rozpoznaj wycieki energii</h3>
+          <p>Zobacz, co naprawdę Cię wyczerpuje: ciało, hałas, brak granic, chaos, wina, samotność.</p>
+        </div>
+
+        <div class="step">
+          <h3>2. Regeneruj ciało mamy</h3>
+          <p>Nie wielką rewolucją, ale małymi dawkami snu, jedzenia, ciszy, ruchu, dotyku i oddechu.</p>
+        </div>
+
+        <div class="step">
+          <h3>3. Postaw granice</h3>
+          <p>Bo kobieca energia nie rozkwitnie, jeśli każdy może wejść w Ciebie o każdej porze.</p>
+        </div>
+
+        <div class="step">
+          <h3>4. Uprość rytm domu</h3>
+          <p>Nie perfekcyjna organizacja, tylko kilka punktów dnia, które chronią spokój rodziny.</p>
+        </div>
+
+        <div class="step">
+          <h3>5. Wróć do kobiecości</h3>
+          <p>Piękno, ciało, włosy, zapach, twórczość, pieniądze, marzenia i własne życie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Freebie / formularz -->
+  <section class="freebie" id="mapa">
+    <div class="freebie-wrap">
+      <div>
+        <h2>Pobierz Mapę Wycieków Kobiecej Energii</h2>
+        <p>
+          7-dniowy przewodnik dla mamy, która chce zobaczyć,
+          co zabiera jej lekkość — i od czego zacząć odbudowę siebie.
+        </p>
+
+        <p>
+          To będzie pierwszy krok przed kursem:
+          spokojny, prosty i możliwy do wykonania nawet wtedy,
+          gdy dzieci wołają co pięć minut.
+        </p>
+      </div>
+
+      <div class="form-box">
+        <h3>Zapisz się na listę</h3>
+        <p>
+          Formularz możesz później podłączyć np. pod MailerLite, ConvertKit,
+          GetResponse albo Google Forms.
+        </p>
+
+        <!-- 
+          WAŻNE:
+          Ten formularz jest wizualny. 
+          Aby zbierał maile, trzeba później wkleić tu kod formularza z MailerLite / ConvertKit / GetResponse.
+        -->
+        <form>
+          <input type="text" name="name" placeholder="Twoje imię" />
+          <input type="email" name="email" placeholder="Twój e-mail" />
+          <button type="submit" class="btn btn-primary">Chcę Mapę Energii</button>
+        </form>
+
+        <p class="form-note">
+          Zapisując się, wyrażasz zgodę na otrzymywanie wiadomości dotyczących
+          materiałów, kursów i narzędzi Rozkwitu Mamy. W każdej chwili możesz się wypisać.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kurs -->
+  <section class="course" id="kurs">
+    <div class="section-title">
+      <h2>Powstaje kurs: „Mamo, wróć do siebie”</h2>
+      <p>
+        Kurs dla mam wielodzietnych, które chcą odzyskać kobiecą energię,
+        lekkość, spokój i własne życie — bez presji perfekcji.
+      </p>
+    </div>
+
+    <div class="modules">
+      <div class="module">
+        <h3>Moduł 1: Gdzie zniknęła moja lekkość?</h3>
+        <p>Diagnoza przeciążenia, wycieków energii i życia w trybie ciągłego reagowania.</p>
+      </div>
+
+      <div class="module">
+        <h3>Moduł 2: Ciało kobiety, nie tylko ciało mamy</h3>
+        <p>Sen, jedzenie, napięcie, regeneracja, ruch i mikrochwile powrotu do ciała.</p>
+      </div>
+
+      <div class="module">
+        <h3>Moduł 3: Granice w świecie „mamo, mamo, mamo”</h3>
+        <p>Jak przestać być dostępną zawsze, natychmiast i dla wszystkich.</p>
+      </div>
+
+      <div class="module">
+        <h3>Moduł 4: Dom, który nie wysysa</h3>
+        <p>Minimalny rytm dnia, mniej decyzji, mniej chaosu i więcej oddechu.</p>
+      </div>
+
+      <div class="module">
+        <h3>Moduł 5: Dzieci jako drużyna</h3>
+        <p>Jak przesuwać dzieci z trybu „obsłuż mnie” do prostego współdziałania.</p>
+      </div>
+
+      <div class="module">
+        <h3>Moduł 6: Kobiecość w praktyce dnia</h3>
+        <p>Ubranie, włosy, zapach, piękno, ruch, zmysły, twórczość i małe rytuały.</p>
+      </div>
+
+      <div class="module">
+        <h3>Moduł 7: Lekkość psychiczna</h3>
+        <p>Jak przestać nosić wszystko w głowie i wrócić do spokoju bez poczucia winy.</p>
+      </div>
+
+      <div class="module">
+        <h3>Moduł 8: Mama, która ma własne życie</h3>
+        <p>Pieniądze, rozwój, marzenia, twórczość i przestrzeń, która należy do Ciebie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O autorce -->
+  <section class="about" id="kontakt">
+    <div class="about-box">
+      <h2>To będzie kurs z prawdziwego życia.</h2>
+
+      <p>
+        Nie z piedestału. Nie z teorii idealnego domu. Nie z obrazka,
+        na którym dzieci zawsze mówią spokojnym głosem, a mama ma czas
+        na jogę, smoothie i świeże kwiaty.
+      </p>
+
+      <p>
+        Ten projekt powstaje z doświadczenia mamy, która zna wielodzietny hałas,
+        zmęczenie, kłótnie, przeciążenie i to dziwne uczucie, że wszyscy czegoś chcą,
+        a ona sama znika.
+      </p>
+
+      <p>
+        Dlatego pierwszy krok nie brzmi: „ogarnij się”.
+        Pierwszy krok brzmi: <strong>sprawdź, gdzie wycieka Twoja energia.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Końcowe CTA -->
+  <section class="final-cta">
+    <h2>Nie musisz czekać, aż dzieci dorosną, żeby wrócić do siebie.</h2>
+    <p>
+      Możesz zacząć małymi krokami już teraz — od jednego oddechu,
+      jednej granicy, jednej decyzji i jednej mapy, która pokaże Ci,
+      gdzie naprawdę tracisz siły.
+    </p>
+
+    <a href="#mapa" class="btn btn-primary">Zaczynam od Mapy Energii</a>
+  </section>
+
+  <!-- Stopka -->
+  <footer>
+    <div class="footer-wrap">
+      <div>
+        © 2026 Rozkwit Mamy. Wszystkie prawa zastrzeżone.
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Polityka prywatności</a>
+        <a href="#">Regulamin</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
